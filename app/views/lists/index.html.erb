@@ -1,0 +1,24 @@
+<br>
+<h1>List</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th colspan="1"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @lists.each do |list| %>
+      <tr>
+        <td><%= list.name %></td>
+        <td><%= link_to 'Show', list %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New List', new_list_path %>
