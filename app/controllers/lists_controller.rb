@@ -1,13 +1,9 @@
 class ListsController < ApplicationController
-  before_action :set_list, only: [:show]
+  before_action :set_list, only: [:show, :edit, :update]
 
   # GET /restaurants
   def index
     @lists = List.all
-  end
-
-  # GET /lists/1
-  def show
   end
 
   # GET /lists/new
@@ -26,6 +22,18 @@ class ListsController < ApplicationController
     end
   end
 
+   # GET /lists/1
+  def show
+  end
+
+  def edit
+  end
+
+  def update
+    @list.update(list_params)
+    redirect_to list_path(@list)
+  end
+
   private
   # Use callbacks to share common setup or constraints between actions.
   def set_list
@@ -34,6 +42,6 @@ class ListsController < ApplicationController
 
   # Only allow a list of trusted parameters through.
   def list_params
-    params.require(:list).permit(:name)
+    params.require(:list).permit(:name, :picture_url)
   end
 end

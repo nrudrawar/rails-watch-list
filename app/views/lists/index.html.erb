@@ -1,24 +1,32 @@
-<br>
-<h1>List</h1>
-
-<table>
-  <thead>
-    <tr>
-      <th>Name</th>
-      <th colspan="1"></th>
-    </tr>
-  </thead>
-
-  <tbody>
+<div class="container mt-3">
+  <div class="row">
+    <div class="col-12">
+      <h1>All my movie lists</h1>
+    </div>
+  </div>
+  <div class="row">
     <% @lists.each do |list| %>
-      <tr>
-        <td><%= list.name %></td>
-        <td><%= link_to 'Show', list %></td>
-      </tr>
+      <div class="col-sm-12 col-md-6 col-lg-4">
+        <div class="list-card">
+        <div class="list-card-image" style="background-image: url('https://source.unsplash.com/random')"></div>
+         <%# <div class="list-card-image"> image_tag list.picture_url, alt: list.name  </div>%>
+          <div class="list-card-content">
+            <div class="list-card-title">
+              <h4><%= list.name %></h4>
+            </div>
+          </div>
+          <div class="list-card-actions">
+            <%= link_to 'More info', list_path(list) %> |
+            <%= link_to 'Edit', edit_list_path(list) %> |
+            <%= link_to 'Add a movie', new_list_bookmark_path(list) %>
+          </div>
+        </div>
+      </div>
     <% end %>
-  </tbody>
-</table>
+  </div>
+</div>
 
-<br>
+<%# link_to 'New List', new_list_path %>
 
-<%= link_to 'New List', new_list_path %>
+
+

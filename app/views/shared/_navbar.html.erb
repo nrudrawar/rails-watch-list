@@ -1,4 +1,5 @@
 <nav class="navbar navbar-expand-lg navbar navbar-dark bg-dark">
+  <%= image_tag "cinema.png", alt: "My Movies", width: 50, height:50 %>
   <%= link_to 'Movies', lists_path, class:'navbar-brand' %>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
@@ -10,9 +11,6 @@
       </li>
       <li class="nav-item">
         <%= link_to 'New List', new_list_path, class:"nav-link"%>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link disabled" href="#">Disabled</a>
       </li>
     </ul>
   </div>
