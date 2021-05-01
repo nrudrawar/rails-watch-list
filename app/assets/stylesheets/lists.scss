@@ -21,8 +21,10 @@
 
 .list-card-image {
   height: 180px;
+  width: 100%;
   background-position: center;
   background-size: cover;
+  object-fit: cover;
 }
 
 .list-card-content {
