@@ -13,10 +13,20 @@ Rails.start()
 Turbolinks.start()
 ActiveStorage.start()
 
+import 'select2/dist/css/select2.min.css'
+import 'jquery-bar-rating/dist/themes/css-stars';
+import 'aos/dist/aos.css';
+import AOS from 'aos'
+
 import { loadDynamicBannerText } from '../components/typed';
+import { initStarRating } from '../components/star_ratings';
+import { initSelect2 } from '../components/select2';
 
 document.addEventListener('turbolinks:load', () => {
   // Call your JS functions here
   // [...]
-  loadDynamicBannerText();
+  //loadDynamicBannerText();
+  initSelect2();
+  initStarRating();
+  AOS.init();
 });
