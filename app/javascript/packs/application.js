@@ -19,14 +19,15 @@ import 'aos/dist/aos.css';
 import AOS from 'aos'
 
 import { loadDynamicBannerText } from '../components/typed';
-import { initStarRating } from '../components/star_ratings';
 import { initSelect2 } from '../components/select2';
+import { initStarRating } from '../components/star_ratings';
+
 
 document.addEventListener('turbolinks:load', () => {
   // Call your JS functions here
   // [...]
   //loadDynamicBannerText();
+  AOS.init();
   initSelect2();
   initStarRating();
-  AOS.init();
 });
